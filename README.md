@@ -1,1 +1,1 @@
-# JavaScriptDOM
+# JavaScript-DOM-Tutorial
