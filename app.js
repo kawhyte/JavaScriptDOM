@@ -34,6 +34,26 @@ const bookList = document.querySelector('#book-list')
 
 // console.log(bookList.children)
 
-console.log (bookList.nextSibling)
-console.log (bookList.nextElementSibling)
-console.log (bookList.previousElementSibling)
+// console.log (bookList.nextSibling)
+// console.log (bookList.nextElementSibling)
+// console.log (bookList.previousElementSibling)
+
+const h2 = document.querySelector('#book-list h2')
+//console.log(h2)
+h2.addEventListener('click', (e) => {
+//console.log(e)
+
+})
+
+const buttons = document.querySelectorAll('#book-list .delete')
+
+buttons.forEach(btn =>{
+     btn.addEventListener('click',(e)=>{
+const li  = e.target.parentElement
+li.parentNode.removeChild(li)
+
+console.log(li)
+
+})
+    
+     })
