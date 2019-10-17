@@ -20,10 +20,16 @@
 // <p> Para1</p>`
 
 
-const banner  = document.querySelector('#page-banner');
-console.log(banner.nodeType)
-console.log(banner.nodeName)
-console.log(banner.hasChildNodes())
+// const banner  = document.querySelector('#page-banner');
+// console.log(banner.nodeType)
+// console.log(banner.nodeName)
+// console.log(banner.hasChildNodes())
 
-const cloned =  banner.cloneNode(true)
-console.log(cloned)
+// const cloned =  banner.cloneNode(true)
+// console.log(cloned)
+
+
+const bookList = document.querySelector('#book-list')
+console.log(bookList.parentNode.parentElement)
+
+console.log(bookList.children)
