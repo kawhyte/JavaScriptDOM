@@ -38,22 +38,36 @@ const bookList = document.querySelector('#book-list')
 // console.log (bookList.nextElementSibling)
 // console.log (bookList.previousElementSibling)
 
-const h2 = document.querySelector('#book-list h2')
-//console.log(h2)
-h2.addEventListener('click', (e) => {
-//console.log(e)
+// const h2 = document.querySelector('#book-list h2')
+// //console.log(h2)
+// h2.addEventListener('click', (e) => {
+// //console.log(e)
 
-})
+// })
 
-const buttons = document.querySelectorAll('#book-list .delete')
+// const buttons = document.querySelectorAll('#book-list .delete')
 
-buttons.forEach(btn =>{
-     btn.addEventListener('click',(e)=>{
-const li  = e.target.parentElement
-li.parentNode.removeChild(li)
+// buttons.forEach(btn =>{
+//      btn.addEventListener('click',(e)=>{
+// const li  = e.target.parentElement
+// li.parentNode.removeChild(li)
 
-console.log(li)
+// console.log(li)
 
-})
+// })
     
-     })
+//      })
+
+
+const list = document.querySelector('#book-list ul');
+
+list.addEventListener('click',(e)=>{
+
+    if(e.target.className === 'delete'){
+        const li  = e.target.parentElement
+        li.parentNode.removeChild(li)
+        console.log(e.target.className)
+
+    }
+
+})
