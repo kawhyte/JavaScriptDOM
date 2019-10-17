@@ -30,6 +30,10 @@
 
 
 const bookList = document.querySelector('#book-list')
-console.log(bookList.parentNode.parentElement)
+// console.log(bookList.parentNode.parentElement)
 
-console.log(bookList.children)
+// console.log(bookList.children)
+
+console.log (bookList.nextSibling)
+console.log (bookList.nextElementSibling)
+console.log (bookList.previousElementSibling)
