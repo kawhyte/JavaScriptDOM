@@ -59,15 +59,24 @@ const bookList = document.querySelector('#book-list')
 //      })
 
 
-const list = document.querySelector('#book-list ul');
+// const list = document.querySelector('#book-list ul');
 
-list.addEventListener('click',(e)=>{
+// list.addEventListener('click',(e)=>{
 
-    if(e.target.className === 'delete'){
-        const li  = e.target.parentElement
-        li.parentNode.removeChild(li)
-        console.log(e.target.className)
+//     if(e.target.className === 'delete'){
+//         const li  = e.target.parentElement
+//         li.parentNode.removeChild(li)
+//         console.log(e.target.className)
 
-    }
+//     }
+
+// })
+
+const addForm = document.forms['add-book']
+
+addForm.addEventListener('submit',(e)=>{
+ e.preventDefault();
+const val = addForm.querySelector('input[type="text"]').value
+console.log(val)
 
 })
