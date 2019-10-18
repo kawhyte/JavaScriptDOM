@@ -72,11 +72,33 @@ const bookList = document.querySelector('#book-list')
 
 // })
 
+const list = document.querySelector('#book-list ul');
+
 const addForm = document.forms['add-book']
 
 addForm.addEventListener('submit',(e)=>{
  e.preventDefault();
 const val = addForm.querySelector('input[type="text"]').value
-console.log(val)
+//console.log(val)
+
+//create
+const li = document.createElement('li')
+const bookName = document.createElement('span')
+const deleteButton = document.createElement('span')
+//add
+deleteButton.textContent= 'delete'
+bookName.textContent = val
+
+//add classes
+
+deleteButton.classList.add('delete')
+bookName.classList.add('name')
+//append
+//list.appendChild(li.appendChild(bookName).appendChild(deleteButton))
+li.appendChild(bookName)
+li.appendChild(deleteButton)
+list.appendChild(li)
+
+console.log(list)
 
 })
