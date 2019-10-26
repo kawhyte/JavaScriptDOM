@@ -55,7 +55,7 @@ const bookList = document.querySelector('#book-list')
 // console.log(li)
 
 // })
-    
+
 //      })
 
 
@@ -76,43 +76,75 @@ const list = document.querySelector('#book-list ul');
 
 const addForm = document.forms['add-book']
 
-addForm.addEventListener('submit',(e)=>{
- e.preventDefault();
-const val = addForm.querySelector('input[type="text"]').value
-//console.log(val)
+addForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = addForm.querySelector('input[type="text"]').value
+    //console.log(val)
 
-//create
-const li = document.createElement('li')
-const bookName = document.createElement('span')
-const deleteButton = document.createElement('span')
-//add
-deleteButton.textContent= 'delete'
-bookName.textContent = val
+    //create
+    const li = document.createElement('li')
+    const bookName = document.createElement('span')
+    const deleteButton = document.createElement('span')
+    //add
+    deleteButton.textContent = 'delete'
+    bookName.textContent = val
 
-//add classes
+    //add classes
 
-deleteButton.classList.add('delete')
-bookName.classList.add('name')
-//append
-//list.appendChild(li.appendChild(bookName).appendChild(deleteButton))
-li.appendChild(bookName)
-li.appendChild(deleteButton)
-list.appendChild(li)
+    deleteButton.classList.add('delete')
+    bookName.classList.add('name')
+    //append
+    //list.appendChild(li.appendChild(bookName).appendChild(deleteButton))
+    li.appendChild(bookName)
+    li.appendChild(deleteButton)
+    list.appendChild(li)
 
-console.log(list)
+    console.log(list)
 
 })
 
 const hideBox = document.querySelector('#hide')
 
-hideBox.addEventListener('change',  (e)=> {
-e.preventDefault();
+hideBox.addEventListener('change', (e) => {
+    e.preventDefault();
 
-if (hideBox.checked){
-list.style.display = "none"
-}else{
-    list.style.display = "block"
-}
-console.log(e);
+    if (hideBox.checked) {
+        list.style.display = "none"
+    } else {
+        list.style.display = "block"
+    }
+    console.log(e);
 
 })
+
+const searchBar = document.forms['search-books'].querySelector('input')
+
+searchBar.addEventListener('keyup', (e) => {
+
+    const term = e.target.value.toLowerCase();
+    const books = list.getElementsByTagName("li");
+
+    Array.from(books).forEach(book => {
+
+        const title = book.firstElementChild.textContent
+        if (title.toLowerCase().indexOf(term) != -1) {
+book.style.display = "block"
+        }else{
+
+            book.style.display = "none"
+        }
+        console.log(title)
+        //element.innerHTML += " Kenny"
+
+    })
+
+
+
+})
+
+// wrapper.forEach(element =>{
+
+//     console.log(element.innerHTML)
+//     element.innerHTML += " Kenny"
+
+// })
