@@ -102,3 +102,17 @@ list.appendChild(li)
 console.log(list)
 
 })
+
+const hideBox = document.querySelector('#hide')
+
+hideBox.addEventListener('change',  (e)=> {
+e.preventDefault();
+
+if (hideBox.checked){
+list.style.display = "none"
+}else{
+    list.style.display = "block"
+}
+console.log(e);
+
+})
