@@ -137,9 +137,6 @@ searchBar.addEventListener('keyup', (e) => {
         //element.innerHTML += " Kenny"
 
     })
-
-
-
 })
 
 // tabbed content
